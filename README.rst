@@ -11,6 +11,7 @@ Build guidelines
 
   - :code:`sudo apt-get install cmake`
   - :code:`sudo apt-get install check`
+  - :code:`sudo apt-get install pkg-config`
   - from the root dir of the project, execute :code:`make`
 
 * Windows: 
