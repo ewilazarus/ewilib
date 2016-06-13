@@ -151,6 +151,20 @@ START_TEST(test_cannot_link_node_more_than_once_same_target)
 END_TEST
 
 
+START_TEST(test_cannot_link_to_null_target)
+{
+    Node *n1 = Backbone_create(NULL);
+    Node *n2 = NULL;
+
+    Backbone_link(n1, n2, NULL);
+
+    ck_assert_int_eq(n1->count_e, 0);
+
+    Backbone_destroy(&n1);
+}
+END_TEST
+
+
 START_TEST(test_can_unlink_two_linked_nodes)
 {
 	Node *n1 = Backbone_create(NULL);
@@ -251,6 +265,7 @@ Suite *TSuite_backbone(void)
 	tcase_add_test(tc, test_can_link_multiple_nodes);
 	tcase_add_test(tc, test_can_link_node_to_itself);
 	tcase_add_test(tc, test_cannot_link_node_more_than_once_same_target);
+    tcase_add_test(tc, test_cannot_link_to_null_target);
 	suite_add_tcase(s, tc);
 
 	tc = tcase_create("NODE_UNLINKING");

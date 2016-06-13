@@ -14,6 +14,7 @@
  *        test_can_link_multiple_nodes
  *        test_can_link_node_to_itself
  *        test_cannot_link_node_more_than_once_same_target
+ *        test_cannot_link_node_to_null_target
  *
  *        [NODE_UNLINKING]
  *        test_can_unlink_two_linked_nodes

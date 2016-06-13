@@ -180,7 +180,7 @@ Node *Backbone_create(void *meta_n)
  *****************************************************************************/
 void Backbone_link(Node *orig, Node *dest, void *meta_e)
 {
-	if (!dest || !linked(orig, dest)) {
+	if (orig && dest && !linked(orig, dest)) {
 		orig->edges = ealloc(orig, 1);
 		orig->edges[orig->count_e]->from = orig;
 		orig->edges[orig->count_e]->to = dest;
